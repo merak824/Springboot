@@ -1,7 +1,5 @@
 package com.xiaoqian.demo.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xiaoqian.demo.entity.User;
 import com.xiaoqian.demo.mapper.UserMapper;
 import com.xiaoqian.demo.service.UserService;
@@ -27,4 +25,9 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public String add(User user){
+        userMapper.add(user);
+        return "新增成功";
+    }
 }

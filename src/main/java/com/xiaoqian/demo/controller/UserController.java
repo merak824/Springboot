@@ -3,9 +3,7 @@ package com.xiaoqian.demo.controller;
 import com.xiaoqian.demo.entity.User;
 import com.xiaoqian.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +26,11 @@ public class UserController {
         User users =userService.selectById();
         System.out.println(users);
         return users;
+    }
+
+    @PostMapping("/add")
+    public String add(@RequestBody User user){
+        userService.add(user);
+        return "添加成功！";
     }
 }
