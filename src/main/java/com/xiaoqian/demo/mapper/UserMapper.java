@@ -18,10 +18,15 @@ public interface UserMapper extends BaseMapper<User> {
      * 根据id查找用户数据接口
      * @return
      */
-    User selectById();
-
+    List<User> selectById(Long id);
+    
     /**
      * 新增用户数据接口
      */
     void add(User user);
+
+    /**
+     * 修改用户信息数据接口
+     */
+
 }

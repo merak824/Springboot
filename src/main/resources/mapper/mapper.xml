@@ -5,11 +5,18 @@
         INSERT INTO User(username,password,age,sex,email,address)
         VALUES (#{username},#{password},#{age},#{sex},#{email},#{address})
     </insert>
+
+    <update id="update">
+
+    </update>
+
     <select id="findAll" resultType="com.xiaoqian.demo.entity.User">
         SELECT * FROM User
     </select>
+
     <select id="selectById" resultType="com.xiaoqian.demo.entity.User">
-        SELECT * FROM User
-        WHERE id=1
+        SELECT * FROM user
+        WHERE id=#{id}
     </select>
+
 </mapper>

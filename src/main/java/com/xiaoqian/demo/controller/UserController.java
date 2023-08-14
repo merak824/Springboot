@@ -21,16 +21,15 @@ public class UserController {
         return users;
     }
 
-    @GetMapping("/selectById")
-    User selectById(){
-        User users =userService.selectById();
-        System.out.println(users);
-        return users;
-    }
-
     @PostMapping("/add")
     public String add(@RequestBody User user){
         userService.add(user);
         return "添加成功！";
+    }
+
+    @GetMapping("/selectById")
+    List<User> selectById(Long id){
+        List<User> users = userService.selectById(id);
+        return users;
     }
 }
