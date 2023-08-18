@@ -16,18 +16,21 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    //查找所有用户信息
     @GetMapping("/findAll")
     public Result findAll() {
         List<User> users = userService.findAll();
         return Result.success(users);
     }
 
+    //根据id查找用户信息
     @GetMapping("/selectById")
-    List<User> selectById(Long id){
+    public Result selectById(Long id){
         List<User> users = userService.selectById(id);
-        return users;
+        return Result.success(users);
     }
 
+    //添加用户信息
     @PostMapping("/add")
     public Result add(@RequestBody User user){
         //通过MySQL索引的方式判断用户是否存在
@@ -43,9 +46,18 @@ public class UserController {
         return Result.success();
     }
 
+
+    //修改用户信息
     @PostMapping("/update")
     public Result update(@RequestBody User user){
         userService.update(user);
+        return Result.success();
+    }
+
+    //根据id删除用户信息
+    @DeleteMapping("/delete")
+    public Result delete(Integer id){
+        userService.deletes(id);
         return Result.success();
     }
 }

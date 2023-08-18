@@ -29,4 +29,9 @@ public interface UserMapper extends BaseMapper<User> {
      * 修改用户信息（数据接口）
      */
     void update(User user);
+
+    /**
+     * 删除用户信息（数据接口）
+     */
+    void delete(Integer id);
 }

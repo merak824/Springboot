@@ -5,7 +5,6 @@ import com.xiaoqian.demo.mapper.UserMapper;
 import com.xiaoqian.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.xiaoqian.demo.common.Result;
 
 import java.util.List;
 
@@ -33,6 +32,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(User user) {
+
         userMapper.update(user);
+    }
+
+    @Override
+    public void deletes(Integer id) {
+        userMapper.delete(id);
     }
 }

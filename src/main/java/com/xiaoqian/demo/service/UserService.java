@@ -30,4 +30,9 @@ public interface UserService {
      * 修改用户信息（业务接口）
      */
     void update(User user);
+
+    /**
+     * 删除用户信息（业务接口）
+     */
+    void deletes(Integer id);
 }
