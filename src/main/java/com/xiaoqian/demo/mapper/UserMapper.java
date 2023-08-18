@@ -21,12 +21,12 @@ public interface UserMapper extends BaseMapper<User> {
     List<User> selectById(Long id);
     
     /**
-     * 新增用户数据接口
+     * 新增用户信息（数据接口）
      */
     void add(User user);
 
     /**
-     * 修改用户信息数据接口
+     * 修改用户信息（数据接口）
      */
-
+    void update(User user);
 }
