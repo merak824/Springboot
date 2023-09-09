@@ -14,8 +14,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
     @Override
-    public List<User> findAll() {
-        List<User> users = userMapper.findAll();
+    public List<User> selectAll() {
+        List<User> users = userMapper.selectAll();
         return users;
     }
 
@@ -32,12 +32,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(User user) {
-
         userMapper.update(user);
     }
 
     @Override
-    public void deletes(Integer id) {
+    public void delete(Long id) {
         userMapper.delete(id);
     }
 }

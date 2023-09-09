@@ -18,9 +18,9 @@ public class UserController {
     UserService userService;
 
     //查找所有用户信息
-    @GetMapping("/findAll")
-    public Result findAll() {
-        List<User> users = userService.findAll();
+    @GetMapping("/selectAll")
+    public Result selectAll() {
+        List<User> users = userService.selectAll();
         return Result.success(users);
     }
 
@@ -57,8 +57,8 @@ public class UserController {
 
     //根据id删除用户信息
     @DeleteMapping("/delete")
-    public Result delete(Integer id){
-        userService.deletes(id);
+    public Result delete(Long id){
+        userService.delete(id);
         return Result.success();
     }
 }

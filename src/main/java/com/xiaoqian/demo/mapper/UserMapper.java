@@ -12,7 +12,7 @@ public interface UserMapper extends BaseMapper<User> {
      * 查找所有用户数据接口
      * @return
      */
-    List<User> findAll();
+    List<User> selectAll();
 
     /**
      * 根据id查找用户数据接口
@@ -33,5 +33,5 @@ public interface UserMapper extends BaseMapper<User> {
     /**
      * 删除用户信息（数据接口）
      */
-    void delete(Integer id);
+    void delete(Long id);
 }

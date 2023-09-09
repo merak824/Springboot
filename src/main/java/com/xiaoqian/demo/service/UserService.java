@@ -12,7 +12,7 @@ public interface UserService {
      * 查找所有用户信息（业务接口）
      * @return
      */
-    List<User> findAll();
+    List<User> selectAll();
 
     /**
      * 通过id查找用户信息（业务接口）
@@ -34,5 +34,5 @@ public interface UserService {
     /**
      * 删除用户信息（业务接口）
      */
-    void deletes(Integer id);
+    void delete(Long id);
 }
